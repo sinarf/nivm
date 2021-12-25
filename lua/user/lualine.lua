@@ -27,7 +27,7 @@ local diff = {
 local mode = {
 	"mode",
 	fmt = function(str)
-		return "-- " .. str .. " --"
+		return "[" .. string.sub(str, 1, 1) .. "]"
 	end,
 }
 
@@ -65,15 +65,15 @@ end
 lualine.setup({
 	options = {
 		icons_enabled = true,
-		theme = "auto",
+		theme = "dracula",
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
 		always_divide_middle = true,
 	},
 	sections = {
-		lualine_a = { branch, diagnostics },
-		lualine_b = { mode },
+		lualine_a = { mode, branch, diagnostics },
+		lualine_b = { },
 		lualine_c = {},
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
 		lualine_x = { diff, spaces, "encoding", filetype },
