@@ -97,6 +97,7 @@ return packer.startup(function(use)
 
   -- Python
   use "petobens/poet-v"
+  use "alfredodeza/pytest.vim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
